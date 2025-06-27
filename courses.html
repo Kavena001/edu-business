@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Professionnelle | Catalogue de cours</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Cours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-sm btn-outline-light me-2 language-switcher" data-lang="fr">FR</button>
+                    <button class="btn btn-sm btn-outline-light language-switcher" data-lang="en">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary text-white py-4">
+        <div class="container">
+            <h1>Catalogue de cours</h1>
+            <p>Tous nos programmes de formation pour développer vos compétences professionnelles</p>
+        </div>
+    </header>
+
+    <!-- Courses Grid -->
+    <section class="container my-5">
+        <div class="row">
+            <!-- Page 1 Courses (6 courses) -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/courses/course1.jpg" class="card-img-top" alt="Gestion de projet">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion de projet</h5>
+                        <p class="card-text">Maîtrisez les fondamentaux de la gestion de projet.</p>
+                        <a href="courses/course1.html" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/courses/course2.jpg" class="card-img-top" alt="Communication d'entreprise">
+                    <div class="card-body">
+                        <h5 class="card-title">Communication d'entreprise</h5>
+                        <p class="card-text">Améliorez vos compétences en communication.</p>
+                        <a href="courses/course2.html" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/courses/course3.jpg" class="card-img-top" alt="Leadership">
+                    <div class="card-body">
+                        <h5 class="card-title">Leadership et gestion d'équipe</h5>
+                        <p class="card-text">Développez vos compétences en leadership.</p>
+                        <a href="courses/course3.html" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/courses/course4.jpg" class="card-img-top" alt="Marketing digital">
+                    <div class="card-body">
+                        <h5 class="card-title">Marketing digital</h5>
+                        <p class="card-text">Stratégies digitales pour booster votre présence en ligne.</p>
+                        <a href="courses/course4.html" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/courses/course5.jpg" class="card-img-top" alt="Gestion du temps">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion du temps</h5>
+                        <p class="card-text">Techniques pour une meilleure productivité.</p>
+                        <a href="courses/course5.html" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/courses/course6.jpg" class="card-img-top" alt="Résolution de problèmes">
+                    <div class="card-body">
+                        <h5 class="card-title">Résolution de problèmes</h5>
+                        <p class="card-text">Approches créatives pour résoudre les défis professionnels.</p>
+                        <a href="courses/course6.html" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item active"><a class="page-link" href="courses.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="courses-page2.html">2</a></li>
+                <li class="page-item"><a class="page-link" href="courses-page3.html">3</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-dark text-white py-4">
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

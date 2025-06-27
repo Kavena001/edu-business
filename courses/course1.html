@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Professionnelle | Gestion de projet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Cours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-sm btn-outline-light me-2 language-switcher" data-lang="fr">FR</button>
+                    <button class="btn btn-sm btn-outline-light language-switcher" data-lang="en">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Detail Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Gestion de projet</h1>
+                    <p class="lead">Maîtrisez les fondamentaux pour mener vos projets à terme avec succès</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <!-- In courses/course1.html -->
+                <a href="enrollment/enroll.html" class="btn btn-light btn-lg enroll-btn">S'inscrire maintenant</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Content -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-8">
+                <img src="../img/courses/course1.jpg" class="img-fluid mb-4" alt="Gestion de projet">
+                <h2>Description du cours</h2>
+                <p>Ce cours complet sur la gestion de projet vous fournira les outils et techniques nécessaires pour planifier, exécuter et clôturer des projets avec succès. Vous apprendrez les méthodologies modernes de gestion de projet et comment les appliquer dans divers contextes professionnels.</p>
+                
+                <h3 class="mt-4">Objectifs d'apprentissage</h3>
+                <ul>
+                    <li>Comprendre les principes fondamentaux de la gestion de projet</li>
+                    <li>Maîtriser les outils de planification et de suivi</li>
+                    <li>Apprendre à gérer les risques et les parties prenantes</li>
+                    <li>Développer des compétences en leadership d'équipe projet</li>
+                    <li>Savoir utiliser les méthodologies Agile et Waterfall</li>
+                </ul>
+                
+                <h3 class="mt-4">Public cible</h3>
+                <p>Ce cours s'adresse aux chefs de projet débutants, aux membres d'équipes projet, et à tout professionnel souhaitant acquérir des compétences en gestion de projet.</p>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Détails du cours</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Durée:</strong> 6 semaines</p>
+                        <p><strong>Effort:</strong> 4-6 heures/semaine</p>
+                        <p><strong>Niveau:</strong> Intermédiaire</p>
+                        <p><strong>Langue:</strong> Français</p>
+                        <p><strong>Certificat:</strong> Oui</p>
+                        <!-- In courses/course1.html -->
+                         <a href="enrollment/enroll.html" class="btn btn-light btn-lg enroll-btn">S'inscrire maintenant</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Formation Professionnelle</h5>
+                    <p>Améliorez vos compétences pour exceller dans votre carrière.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Accueil</a></li>
+                        <li><a href="courses.html" class="text-white">Cours</a></li>
+                        <li><a href="about.html" class="text-white">À propos</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <address>
+                        Email: info@formationpro.com<br>
+                        Téléphone: +1 234 567 8900
+                    </address>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2023 Formation Professionnelle. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <!-- At the bottom of courses/course1.html, before </body> -->
+    <script>
+// Set course ID when enroll button is clicked
+document.addEventListener('DOMContentLoaded', function() {
+    const enrollButtons = document.querySelectorAll('.enroll-btn');
+    
+    enrollButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Store course ID in localStorage
+            localStorage.setItem('selectedCourse', 'course1'); // Change this ID for each course
+            localStorage.setItem('selectedCourseTitle', 'Gestion de projet'); // Change title for each course
+        });
+    });
+});
+</script>
+</body>
+</html>
