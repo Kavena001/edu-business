@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Professionnelle | Accueil</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Ensure carousel displays properly */
+        .carousel {
+            overflow: hidden;
+        }
+        .carousel-inner {
+            height: 400px; /* Fixed height for consistency */
+        }
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="../img/logo.png" alt="Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Cours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-sm btn-light me-2 language-switcher active" data-lang="fr">FR</button>
+                    <button class="btn btn-sm btn-outline-light language-switcher" data-lang="en">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!---------------------------------- Banner Carousel (Fixed Height) -------------------------------------------->
+    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/banner/banner1.jpg" class="d-block w-100" alt="Formation professionnelle">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Développez les compétences de votre équipe</h2>
+                    <p>Formations professionnelles adaptées aux besoins de votre entreprise</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner/banner2.jpg" class="d-block w-100" alt="Développement des compétences">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Formations certifiantes</h2>
+                    <p>Améliorez la productivité et l'efficacité de vos employés</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner/banner3.jpg" class="d-block w-100" alt="Apprentissage en ligne">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Apprentissage flexible</h2>
+                    <p>Formations en ligne et en présentiel adaptées à vos horaires</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner/banner4.jpg" class="d-block w-100" alt="Équipe professionnelle">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Experts du secteur</h2>
+                    <p>Formateurs expérimentés avec une expertise pratique</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner/banner5.jpg" class="d-block w-100" alt="Certification">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Investissez dans votre capital humain</h2>
+                    <p>Des solutions de formation qui génèrent un retour sur investissement tangible</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
+    </div>
+
+    <!-- Rest of your French index page content remains the same -->
+     
+    <!-- How We Help Businesses Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Comment nous aidons les entreprises</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                                <i class="bi bi-graph-up text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4>Amélioration de la productivité</h4>
+                            <p>Nos formations ciblées permettent à vos employés d'acquérir des compétences pratiques qui améliorent immédiatement leur performance au travail.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                                <i class="bi bi-people text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4>Rétention des talents</h4>
+                            <p>Les employés qui bénéficient de développement professionnel sont plus engagés et plus susceptibles de rester dans votre entreprise.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                                <i class="bi bi-lightbulb text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4>Innovation continue</h4>
+                            <p>En formant vos équipes aux dernières tendances et technologies, vous favorisez une culture d'innovation dans votre organisation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Cours en vedette</h2>
+            <div class="row g-4">
+                <!-- Course 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="img/courses/course1.jpg" class="card-img-top" alt="Gestion de projet">
+                        <div class="card-body">
+                            <h5 class="card-title">Gestion de projet</h5>
+                            <p class="card-text">Maîtrisez les fondamentaux de la gestion de projet et apprenez à mener vos projets à terme avec succès.</p>
+                            <a href="courses/course1.html" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="img/courses/course2.jpg" class="card-img-top" alt="Communication d'entreprise">
+                        <div class="card-body">
+                            <h5 class="card-title">Communication d'entreprise</h5>
+                            <p class="card-text">Améliorez vos compétences en communication pour des interactions plus efficaces en milieu professionnel.</p>
+                            <a href="courses/course2.html" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="img/courses/course3.jpg" class="card-img-top" alt="Leadership">
+                        <div class="card-body">
+                            <h5 class="card-title">Leadership et gestion d'équipe</h5>
+                            <p class="card-text">Développez vos compétences en leadership pour inspirer et guider votre équipe vers le succès.</p>
+                            <a href="courses/course3.html" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="courses.html" class="btn btn-outline-primary btn-lg">Voir tous nos cours</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Ce que disent nos clients</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text">"Les formations ont considérablement amélioré les compétences de notre équipe commerciale. Nous avons vu des résultats concrets en seulement 3 mois."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="img/testimonial1.jpg" alt="Client" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Marie Dubois</h6>
+                                    <small class="text-muted">Directrice RH, TechSolutions</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text">"La qualité des formateurs et la pertinence des contenus ont dépassé nos attentes. Nous avons déjà programmé d'autres sessions pour nos équipes."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="img/testimonial2.jpg" alt="Client" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Jean Martin</h6>
+                                    <small class="text-muted">PDG, Financia</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <p class="card-text">"La plateforme en ligne est très intuitive et nos employés ont apprécié la flexibilité des horaires. Les résultats sont visibles dans leur travail quotidien."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="img/testimonial3.jpg" alt="Client" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Sophie Lambert</h6>
+                                    <small class="text-muted">Directrice de Formation, LogiGroup</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Prêt à transformer les compétences de votre équipe?</h2>
+            <p class="lead mb-4">Contactez-nous pour une consultation gratuite et découvrez comment nous pouvons répondre aux besoins spécifiques de votre entreprise.</p>
+            <a href="contact.html" class="btn btn-light btn-lg me-3">Nous contacter</a>
+            <a href="courses.html" class="btn btn-outline-light btn-lg">Explorer nos cours</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="bg-dark text-white py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Formation Professionnelle</h5>
+                <p class="small">Améliorez vos compétences pour exceller dans votre carrière.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Liens rapides</h5>
+                <ul class="list-unstyled small">
+                    <li><a href="index.html" class="text-white">Accueil</a></li>
+                    <li><a href="courses.html" class="text-white">Cours</a></li>
+                    <li><a href="about.html" class="text-white">À propos</a></li>
+                    <li><a href="contact.html" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <address class="small">
+                    Email: info@formationpro.com<br>
+                    Téléphone: +1 234 567 8900
+                </address>
+            </div>
+        </div>
+        <div class="text-center mt-2">
+            <p class="small mb-0">&copy; 2023 Formation Professionnelle. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar-scroll.js"></script>
+    <script src="../js/language-switcher.js"></script>
+    <!-- Initialize the carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousel with autoplay
+            var carousel = new bootstrap.Carousel(document.getElementById('bannerCarousel'), {
+                interval: 5000,
+                wrap: true,
+                pause: false
+            });
+            
+            // Ensure all images are loaded before carousel starts
+            var carouselImages = document.querySelectorAll('#bannerCarousel img');
+            var imagesLoaded = 0;
+            
+            carouselImages.forEach(function(img) {
+                if (img.complete) {
+                    imagesLoaded++;
+                } else {
+                    img.addEventListener('load', function() {
+                        imagesLoaded++;
+                        if (imagesLoaded === carouselImages.length) {
+                            carousel.cycle();
+                        }
+                    });
+                }
+            });
+            
+            if (imagesLoaded === carouselImages.length) {
+                carousel.cycle();
+            }
+        });
+    </script>
+</body>
+</html>
