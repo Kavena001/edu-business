@@ -7,30 +7,15 @@
     --accent-color: #ff6600;
     --dark-color: #333333;
     --light-color: #f8f9fa;
+    --royal-primary: #4b2e83;  /* Deep purple */
+    --royal-secondary: #5e4fa2; /* Medium purple-blue */
+    --royal-accent: #8577d9;    /* Lighter purple */
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--dark-color);
-}
-/* Adjust body padding to account for fixed navbar */
-body {
     padding-top: 56px; /* Height of your navbar */
-}
-/* Navbar Styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-/*---------- navbar color ---- navbar color --------------/
-/* New Royal Purple-Blue Color Scheme */
-:root {
-    --royal-primary: #4b2e83;  /* Deep purple */
-    --royal-secondary: #5e4fa2; /* Medium purple-blue */
-    --royal-accent: #8577d9;    /* Lighter purple */
 }
 
 /* Navbar Styles */
@@ -41,6 +26,7 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -73,8 +59,22 @@ footer a:hover {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-/* Language Switcher in Navbar */
+footer .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer .row {
+    align-items: center;
+}
+
+/* Language Switcher Styles */
 .language-switcher {
+    min-width: 50px;
+    text-align: center;
+    transition: all 0.3s ease;
     border-color: var(--royal-accent) !important;
     color: white;
 }
@@ -90,8 +90,7 @@ footer a:hover {
 .language-switcher:not(.active):hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
 }
-/* end of navbar color ------ end of navbar color -------*/
-/* ------------- Body padding -------------------- */
+
 .bg-primary {
     background-color: var(--primary-color) !important;
 }
@@ -136,63 +135,32 @@ footer a:hover {
     color: #ffc107 !important;
 }
 
-/* Call to action */
-.bg-primary {
-    background-color: #0056b3 !important;
-}
-/* Language Switcher Styles */
-.language-switcher {
-    min-width: 50px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.language-switcher.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.language-switcher:not(.active):hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Footer Styles */
-footer {
-    height: 100px; /* Half of typical footer height */
-    padding: 20px 0;
-}
-
-footer .container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-footer .row {
-    align-items: center;
-}
-
 /* Adjust content spacing */
 main {
     min-height: calc(100vh - 156px); /* Viewport height - navbar - footer */
 }
+
 /* ----------------- Contact Form Styles ------------------------------------------ */
 #contactForm .form-control:focus,
-#contactForm .form-select:focus {
+#contactForm .form-select:focus,
+#enrollmentForm .form-control:focus,
+#enrollmentForm .form-select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.25rem rgba(0, 86, 179, 0.25);
 }
 
 #contactForm .was-validated .form-control:valid,
-#contactForm .was-validated .form-control.is-valid {
+#contactForm .was-validated .form-control.is-valid,
+#enrollmentForm .was-validated .form-control:valid,
+#enrollmentForm .was-validated .form-control.is-valid {
     border-color: #28a745;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
 }
 
 #contactForm .was-validated .form-control:invalid,
-#contactForm .was-validated .form-control.is-invalid {
+#contactForm .was-validated .form-control.is-invalid,
+#enrollmentForm .was-validated .form-control:invalid,
+#enrollmentForm .was-validated .form-control.is-invalid {
     border-color: #dc3545;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
 }
@@ -201,47 +169,11 @@ main {
 .bg-primary-opacity-10 {
     background-color: rgba(0, 86, 179, 0.1);
 }
-/* ------ Enrollment --------- Enrollment ------------- Enrollment---------*/
-/* Enrollment Form Styles */
-#enrollmentForm .form-control:focus,
-#enrollmentForm .form-select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.25rem rgba(0, 86, 179, 0.25);
-}
-
-#enrollmentForm .was-validated .form-control:valid,
-#enrollmentForm .was-validated .form-control.is-valid {
-    border-color: #28a745;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-}
-
-#enrollmentForm .was-validated .form-control:invalid,
-#enrollmentForm .was-validated .form-control.is-invalid {
-    border-color: #dc3545;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
-}
 
 /* Modal Styles */
 .modal-content {
     border: none;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-/* Language Switcher Styles */
-.language-switcher {
-    transition: all 0.3s ease;
-    min-width: 50px;
-    text-align: center;
-}
-
-.language-switcher.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.language-switcher:not(.active):hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Carousel Styles */
