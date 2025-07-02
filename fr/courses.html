@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formation Professionnelle | Catalogue de cours</title>
+    <title>Formation Professionnelle | Accueil</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation (same as index.html) -->
-     <!-- In French pages (fr/index.html, fr/about.html, etc.) -->
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="../img/logo.png" alt="Logo" height="40">
@@ -40,7 +43,8 @@
             </div>
         </div>
     </nav>
-    <!-- Page Header -->
+
+    <!---------------------------- Course Catalog Header --------------------------------------------------->
     <header class="bg-primary text-white py-4">
         <div class="container">
             <h1>Catalogue de cours</h1>
@@ -48,13 +52,13 @@
         </div>
     </header>
 
-    <!-- Courses Grid -->
+    <!-------------------------------------------------- Courses Grid --------------------------------->
     <section class="container my-5">
         <div class="row">
             <!-- Page 1 Courses (6 courses) -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/courses/course1.jpg" class="card-img-top" alt="Gestion de projet">
+                    <img src="../img/courses/course1.jpg" class="card-img-top" alt="Gestion de projet">
                     <div class="card-body">
                         <h5 class="card-title">Gestion de projet</h5>
                         <p class="card-text">Maîtrisez les fondamentaux de la gestion de projet.</p>
@@ -65,7 +69,7 @@
             
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/courses/course2.jpg" class="card-img-top" alt="Communication d'entreprise">
+                    <img src="../img/courses/course2.jpg" class="card-img-top" alt="Communication d'entreprise">
                     <div class="card-body">
                         <h5 class="card-title">Communication d'entreprise</h5>
                         <p class="card-text">Améliorez vos compétences en communication.</p>
@@ -76,7 +80,7 @@
             
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/courses/course3.jpg" class="card-img-top" alt="Leadership">
+                    <img src="../img/courses/course3.jpg" class="card-img-top" alt="Leadership">
                     <div class="card-body">
                         <h5 class="card-title">Leadership et gestion d'équipe</h5>
                         <p class="card-text">Développez vos compétences en leadership.</p>
@@ -87,7 +91,7 @@
             
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/courses/course4.jpg" class="card-img-top" alt="Marketing digital">
+                    <img src="../img/courses/course4.jpg" class="card-img-top" alt="Marketing digital">
                     <div class="card-body">
                         <h5 class="card-title">Marketing digital</h5>
                         <p class="card-text">Stratégies digitales pour booster votre présence en ligne.</p>
@@ -98,7 +102,7 @@
             
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/courses/course5.jpg" class="card-img-top" alt="Gestion du temps">
+                    <img src="../img/courses/course5.jpg" class="card-img-top" alt="Gestion du temps">
                     <div class="card-body">
                         <h5 class="card-title">Gestion du temps</h5>
                         <p class="card-text">Techniques pour une meilleure productivité.</p>
@@ -109,7 +113,7 @@
             
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/courses/course6.jpg" class="card-img-top" alt="Résolution de problèmes">
+                    <img src="../img/courses/course6.jpg" class="card-img-top" alt="Résolution de problèmes">
                     <div class="card-body">
                         <h5 class="card-title">Résolution de problèmes</h5>
                         <p class="card-text">Approches créatives pour résoudre les défis professionnels.</p>
@@ -129,41 +133,50 @@
         </nav>
     </section>
 
-    <!-- Footer (same as index.html) -->
-     <footer class="bg-dark text-white py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Formation Professionnelle</h5>
-                <p class="small">Améliorez vos compétences pour exceller dans votre carrière.</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Liens rapides</h5>
-                <ul class="list-unstyled small">
-                    <li><a href="index.html" class="text-white">Accueil</a></li>
-                    <li><a href="courses.html" class="text-white">Cours</a></li>
-                    <li><a href="about.html" class="text-white">À propos</a></li>
-                    <li><a href="contact.html" class="text-white">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>Contact</h5>
-                <address class="small">
-                    Email: info@formationpro.com<br>
-                    Téléphone: +1 234 567 8900
-                </address>
-            </div>
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Prêt à transformer les compétences de votre équipe?</h2>
+            <p class="lead mb-4">Contactez-nous pour une consultation gratuite et découvrez comment nous pouvons répondre aux besoins spécifiques de votre entreprise.</p>
+            <a href="contact.html" class="btn btn-light btn-lg me-3">Nous contacter</a>
+            <a href="courses.html" class="btn btn-outline-light btn-lg">Explorer nos cours</a>
         </div>
-        <div class="text-center mt-2">
-            <p class="small mb-0">&copy; 2023 Formation Professionnelle. Tous droits réservés.</p>
-        </div>
-    </div>
-</footer>
+    </section>
 
+    <!-- Footer -->
+    <footer class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Formation Professionnelle</h5>
+                    <p class="small">Améliorez vos compétences pour exceller dans votre carrière.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-white">Accueil</a></li>
+                        <li><a href="courses.html" class="text-white">Cours</a></li>
+                        <li><a href="about.html" class="text-white">À propos</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <address class="small">
+                        Email: info@formationpro.com<br>
+                        Téléphone: +1 234 567 8900
+                    </address>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <p class="small mb-0">&copy; 2023 Formation Professionnelle. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/language-switcher.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/navbar-scroll.js"></script>
-    
 </body>
 </html>
