@@ -1,32 +1,35 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
+<?php
+// Enable all error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Basic configuration
+define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT']);
+require_once ROOT_PATH . '/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Training | Home</title>
-    
-    <!-- Required Assets -->
-    <link href="<?= CSS_PATH ?>style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    
-    <script src="<?= JS_PATH ?>script.js" defer></script>
-    <script src="<?= JS_PATH ?>language-switcher.js" defer></script>
+    <title>Test Page</title>
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <?php include ROOT_PATH . '/includes/header.php'; ?>
+    <h1>Basic Test</h1>
+    <p>If you see this, HTML is working.</p>
+    <img src="/img/logo.png" alt="Test Logo" width="200">
     
-    <main class="container py-5">
-        <h1>Welcome to Professional Training</h1>
-        <img src="<?= IMG_PATH ?>banner.jpg" alt="Training Banner" class="img-fluid">
-        
-        <!-- Your content here -->
-    </main>
+    <?php
+    echo "<p>PHP is working. Current time: " . date('Y-m-d H:i:s') . "</p>";
     
-    <?php include ROOT_PATH . '/includes/footer.php'; ?>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    // Test database connection
+    try {
+        require_once ROOT_PATH . '/includes/db_connect.php';
+        echo "<p>Database connection successful</p>";
+    } catch(PDOException $e) {
+        echo "<p style='color:red'>Database error: " . $e->getMessage() . "</p>";
+    }
+    ?>
 </body>
 </html>
