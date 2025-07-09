@@ -1,14 +1,19 @@
 RewriteEngine On
 
-# Redirect to language folder if root is accessed
-RewriteRule ^$ /en/index.html [L]
+# 1. Redirect root to English
+RewriteRule ^$ /en/index.php [L]
 
-# Allow direct access to files in css, js, img folders
-RewriteCond %{REQUEST_URI} !^/(css|js|img)/
+# 2. Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
 
-# Redirect all other requests to appropriate language folder
-RewriteCond %{REQUEST_URI} ^/(en|fr)/
-RewriteRule ^(en|fr)/(.*)$ /$1/$2 [L]
+# 3. Handle language folders
+RewriteRule ^(en|fr)/(.*)$ $1/$2 [L]
 
-# Error handling
-ErrorDocument 404 /en/404.html
+# 4. Allow direct asset access
+RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|ico)$ [NC]
+RewriteRule ^ - [L]
+
+# 5. Custom 404
+ErrorDocument 404 /en/404.php

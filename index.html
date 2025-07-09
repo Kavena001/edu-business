@@ -1,8 +1,0 @@
-<?php
-// Detect user language preference
-$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) === 'fr' ? 'fr' : 'en';
-
-// Redirect to appropriate language version
-header("Location: /$lang/index.php");
-exit;
-?>
