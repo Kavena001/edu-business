@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script>
-        // Simple redirection logic
-        const lang = navigator.language.startsWith('fr') ? 'fr' : 'en';
-        window.location.href = `/${lang}/index.html`;
-    </script>
-</head>
-<body>
-    Redirecting...
-</body>
-</html>
+<?php
+// Detect user language preference
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) === 'fr' ? 'fr' : 'en';
+
+// Redirect to appropriate language version
+header("Location: /$lang/index.php");
+exit;
+?>

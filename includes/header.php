@@ -1,20 +1,17 @@
 <?php
-$current_lang = substr($_SERVER['REQUEST_URI'], 1, 2) == 'fr' ? 'fr' : 'en';
-$page_name = basename($_SERVER['SCRIPT_NAME'], '.php');
-$page_content = DB::getPageContent($page_name, $current_lang);
+$current_lang = strpos($_SERVER['REQUEST_URI'], '/fr/') !== false ? 'fr' : 'en';
 ?>
-<!DOCTYPE html>
-<html lang="<?= $current_lang ?>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($page_content['title'] ?? SITE_NAME) ?></title>
-    <meta name="description" content="<?= htmlspecialchars($page_content['meta_description'] ?? '') ?>">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
-    <link href="/css/style.css" rel="stylesheet">
-</head>
-<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/<?= $current_lang ?>/index.php">
+                <img src="<?= IMG_PATH ?>logo.png" alt="Logo" height="40" onerror="this.style.display='none'">
+            </a>
+            
+            <div class="d-flex">
+                <a href="/en/index.php" class="btn btn-sm <?= $current_lang === 'en' ? 'btn-light' : 'btn-outline-light' ?>">EN</a>
+                <a href="/fr/index.php" class="btn btn-sm <?= $current_lang === 'fr' ? 'btn-light' : 'btn-outline-light' ?> ms-2">FR</a>
+            </div>
+        </div>
+    </nav>
+</header>

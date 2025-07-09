@@ -1,23 +1,18 @@
-// Language switching functionality
+// Main site JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Language switcher buttons
-    const languageSwitchers = document.querySelectorAll('.language-switcher');
-    
-    languageSwitchers.forEach(button => {
-        button.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            // In a real implementation, this would change the language of the content
-            alert(`Switching to ${lang === 'fr' ? 'French' : 'English'}. In a real implementation, this would load the appropriate language content.`);
-            
-            // Update active state
-            languageSwitchers.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-        });
+    // Initialize Bootstrap tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
     });
     
-    // Initialize carousel
-    const carousel = new bootstrap.Carousel(document.getElementById('bannerCarousel'), {
-        interval: 5000,
-        ride: 'carousel'
+    // Handle navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
     });
 });

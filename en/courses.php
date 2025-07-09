@@ -1,40 +1,40 @@
-<?php
-require_once __DIR__ . '/../../includes/functions.php';
-
-$current_lang = 'en';
-$page_content = DB::getPageContent('courses', $current_lang);
-$all_courses = DB::getCourses($current_lang);
-
-include __DIR__ . '/../../includes/header.php';
-include __DIR__ . '/../../includes/navigation.php';
+<?php 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+require_once ROOT_PATH . '/includes/db_connect.php';
 ?>
-
-<!-- Course Catalog Header -->
-<header class="bg-primary text-white py-4">
-    <div class="container">
-        <h1><?= htmlspecialchars($page_content['title'] ?? 'Course Catalog') ?></h1>
-        <p><?= htmlspecialchars($page_content['meta_description'] ?? 'All our training programs to develop your professional skills') ?></p>
-    </div>
-</header>
-
-<!-- Courses Grid -->
-<section class="container my-5">
-    <div class="row">
-        <?php foreach($all_courses as $course): ?>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="<?= htmlspecialchars($course['image_path']) ?>" class="card-img-top" alt="<?= htmlspecialchars($course['title']) ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($course['title']) ?></h5>
-                    <p class="card-text"><?= htmlspecialchars($course['short_description']) ?></p>
-                    <a href="/<?= $current_lang ?>/courses/<?= htmlspecialchars($course['slug']) ?>.php" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <?php endforeach; ?>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Courses</title>
+    <!-- Required Assets -->
+    <link href="<?= CSS_PATH ?>style.css" rel="stylesheet">
+    <script src="<?= JS_PATH ?>script.js" defer></script>
+    <script src="<?= JS_PATH ?>enrollment.js" defer></script>
+</head>
+<body>
+    <?php include ROOT_PATH . '/includes/header.php'; ?>
     
-    <!-- Pagination would go here -->
-</section>
-
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+    <main class="container py-5">
+        <h1>Course Catalog</h1>
+        
+        <?php
+        // Fetch courses from database
+        $stmt = $db->prepare("SELECT * FROM courses WHERE language = 'en'");
+        $stmt->execute();
+        $courses = $stmt->fetchAll();
+        
+        foreach ($courses as $course): ?>
+            <div class="course-card">
+                <img src="<?= IMG_PATH . htmlspecialchars($course['image_path']) ?>" 
+                     alt="<?= htmlspecialchars($course['title']) ?>">
+                <h3><?= htmlspecialchars($course['title']) ?></h3>
+                <a href="/en/courses/<?= htmlspecialchars($course['slug']) ?>.php" 
+                   class="btn btn-primary">View Details</a>
+            </div>
+        <?php endforeach; ?>
+    </main>
+    
+    <?php include ROOT_PATH . '/includes/footer.php'; ?>
+</body>
+</html>
