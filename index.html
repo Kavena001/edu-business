@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=fr/index.html">
-    <title>Redirection</title>
+    <script>
+        // Simple redirection logic
+        const lang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+        window.location.href = `/${lang}/index.html`;
+    </script>
 </head>
 <body>
-    <p>Si vous n'êtes pas redirigé automatiquement, <a href="fr/index.html">cliquez ici</a>.</p>
+    Redirecting...
 </body>
 </html>
