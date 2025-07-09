@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const languageButtons = document.querySelectorAll('.language-switcher');
+    // This functionality is now handled server-side in the navigation.php
+    // This file can be used for additional client-side language switching if needed
     
-    languageButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            
-            if (lang === 'en') {
-                window.location.href = '../en/index.html';
-            } else {
-                window.location.href = '../fr/index.html';
-            }
+    // Example: Save language preference in localStorage
+    const languageLinks = document.querySelectorAll('.language-switcher');
+    
+    languageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const lang = this.textContent.trim().toLowerCase();
+            localStorage.setItem('preferred_language', lang);
         });
-        
-        // Update active state based on current path
-        const isFrench = window.location.pathname.includes('/fr/');
-        if ((isFrench && this.getAttribute('data-lang') === 'fr') || 
-            (!isFrench && this.getAttribute('data-lang') === 'en')) {
-            this.classList.add('active', 'btn-light');
-            this.classList.remove('btn-outline-light');
-        } else {
-            this.classList.remove('active', 'btn-light');
-            this.classList.add('btn-outline-light');
-        }
     });
+    
+    // Check for preferred language on page load
+    const preferredLang = localStorage.getItem('preferred_language');
+    if (preferredLang) {
+        const currentLang = window.location.pathname.includes('/fr/') ? 'fr' : 'en';
+        if (preferredLang !== currentLang) {
+            // Redirect to preferred language version if different
+            window.location.href = window.location.href.replace(
+                `/${currentLang}/`, 
+                `/${preferredLang}/`
+            );
+        }
+    }
 });
