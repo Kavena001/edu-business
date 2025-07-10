@@ -1,8 +1,13 @@
 <?php 
+// Enable error reporting at the VERY TOP
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $page_title = "Accueil";
 $current_language = "fr";
-require_once '../includes/header.php'; 
-?>
+require_once '../includes/header.php';
+require_once '../includes/db_connect.php';
+
+// Rest of your French index page...
 
 <!-- Carousel Banner -->
 <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
