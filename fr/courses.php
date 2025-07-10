@@ -1,47 +1,77 @@
-<?php
-require_once __DIR__ . '/../../includes/functions.php';
+<?php 
+$page_title = "Contact";
+$current_language = "fr";
+require_once '../includes/header.php'; 
 
-$current_lang = 'fr';
-$page_content = DB::getPageContent('courses', $current_lang);
-$all_courses = DB::getCourses($current_lang);
-
-include __DIR__ . '/../../includes/header.php';
-include __DIR__ . '/../../includes/navigation.php';
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Process form data and insert into database
+    // You would typically sanitize and validate the input first
+    $name = $_POST['firstName'] . ' ' . $_POST['lastName'];
+    $email = $_POST['email'];
+    $company = $_POST['company'];
+    $message = $_POST['message'];
+    
+    // Example of inserting into database
+    try {
+        $stmt = $pdo->prepare("INSERT INTO contacts (name, email, company, message, language) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$name, $email, $company, $message, $current_language]);
+        
+        // Set success message
+        $success_message = "Merci pour votre message ! Nous vous contacterons dès que possible.";
+    } catch (PDOException $e) {
+        $error_message = "Une erreur s'est produite. Veuillez réessayer plus tard.";
+    }
+}
 ?>
 
-<!-- En-tête du catalogue de cours -->
-<header class="bg-primary text-white py-4">
+<!-- Contact Form Section -->
+<section class="py-5">
     <div class="container">
-        <h1><?= htmlspecialchars($page_content['title'] ?? 'Catalogue de cours') ?></h1>
-        <p><?= htmlspecialchars($page_content['meta_description'] ?? 'Tous nos programmes de formation pour développer vos compétences professionnelles') ?></p>
-    </div>
-</header>
-
-<!-- Grille des cours -->
-<section class="container my-5">
-    <div class="row">
-        <?php foreach($all_courses as $course): ?>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="<?= htmlspecialchars($course['image_path']) ?>" class="card-img-top" alt="<?= htmlspecialchars($course['title']) ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($course['title']) ?></h5>
-                    <p class="card-text"><?= htmlspecialchars($course['short_description']) ?></p>
-                    <a href="/<?= $current_lang ?>/courses/<?= htmlspecialchars($course['slug']) ?>.php" class="btn btn-primary">En savoir plus</a>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-center mb-4">Contactez-nous</h2>
+                <p class="text-center mb-5">Vous avez des questions sur nos programmes de formation ? Remplissez le formulaire ci-dessous et notre équipe vous répondra dès que possible.</p>
+                
+                <?php if (isset($success_message)): ?>
+                    <div class="alert alert-success"><?= $success_message ?></div>
+                <?php elseif (isset($error_message)): ?>
+                    <div class="alert alert-danger"><?= $error_message ?></div>
+                <?php endif; ?>
+                
+                <form id="contactForm" method="POST" novalidate>
+                    <!-- Form fields remain the same as in HTML -->
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">Prénom *</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
+                        </div>
+                        <!-- Other form fields... -->
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-primary px-4 py-2" type="submit">Envoyer le message</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <?php endforeach; ?>
     </div>
-    
-    <!-- Pagination -->
-    <nav aria-label="Navigation des pages">
-        <ul class="pagination justify-content-center">
-            <li class="page-item active"><a class="page-link" href="/fr/courses.php">1</a></li>
-            <li class="page-item"><a class="page-link" href="/fr/courses-page2.php">2</a></li>
-            <li class="page-item"><a class="page-link" href="/fr/courses-page3.php">3</a></li>
-        </ul>
-    </nav>
 </section>
 
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<!-- Contact Information Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                    <i class="bi bi-geo-alt text-primary"></i>
+                </div>
+                <h4>Adresse</h4>
+                <p>123 Rue de la Formation<br>Montréal, QC H3B 2Y5</p>
+            </div>
+            <!-- Other contact info... -->
+        </div>
+    </div>
+</section>
+
+<?php require_once '../includes/footer.php'; ?>
