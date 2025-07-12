@@ -1,18 +1,24 @@
 <?php
-// Site Settings
-define('SITE_NAME', 'Edu-Business');
-define('DEFAULT_LANG', 'fr');
+// Database configuration
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'u189409396_formation_prof');
+define('DB_USER', 'u189409396_Kavena2025');
+define('DB_PASS', 'Adminphoenix25');
+
+// Site settings
+define('SITE_URL', 'http://localhost/formation-pro');
+define('SITE_TITLE', 'Formation Professionnelle');
+
+// File upload paths
+define('UPLOAD_PATH', dirname(__DIR__) . '/uploads/');
+define('COURSE_IMAGE_PATH', UPLOAD_PATH . 'courses/');
+define('TESTIMONIAL_IMAGE_PATH', UPLOAD_PATH . 'testimonials/');
 
 // Start session
 session_start();
 
-// Set language
-if (isset($_GET['lang'])) {
-    $_SESSION['lang'] = in_array($_GET['lang'], ['en', 'fr']) ? $_GET['lang'] : DEFAULT_LANG;
-} elseif (!isset($_SESSION['lang'])) {
-    $_SESSION['lang'] = DEFAULT_LANG;
-}
-
-// Include database connection
-require_once 'db_connect.php';
+// Error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
